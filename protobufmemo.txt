@@ -1,0 +1,98 @@
+﻿C:\Program Files\Java\jdk1.8.0_131\bin
+
+10.2.10.3
+
+protoコンパイル
+C:\Users\達哉\Desktop\test_java\ren>protoc --java_out . api.proto
+
+goの時
+ protoc -I . helloworld.proto --go_out=plugins=grpc:.
+
+
+javac
+javac -classpath C:\Users\達哉\Desktop\protobuf\protobuf-3.3.0\java\core\target\protobuf-java-3.3.0.jar Persons.java
+
+
+
+java
+java -classpath C:\Users\達哉\Desktop\protobuf\protobuf-3.3.0\java\core\target\protobuf-java-3.3.0.jar ReadWritePerson
+
+memo
+今更だけど gRPC を試してみた
+http://qiita.com/chyiro/items/41020e0314414c57ec21#fn2
+
+課題
+https://gist.github.com/mrecun/b59e3ddfccb7d4d793153d41a077f630
+
+protocol buffer(マイナビ)
+http://news.mynavi.jp/articles/2008/07/18/protocolbuffer/001.html
+
+
+https://github.com/google/protobuf/tree/master/src
+公式ガイド
+https://developers.google.com/protocol-buffers/docs/overview?csw=1
+
+インストール方法
+http://mattn.kaoriya.net/software/20080723203931.htm
+
+
+mvn archetype:create -DgroupId=jp.gihyo -DartifactId=webdb-webapp -DarchetypeArtifactId=maven-archetype-webapp
+
+
+mvnの使い方
+http://wiki.fdiary.net/maven2/?CookBook
+ここに全部あるよ
+
+mvn clean package
+
+cd ~/src/mai/proto/hello_world.proto
+
+protoc --java_out . hello_world.proto
+
+javacでコンパイル下記と同じで	
+
+サーバ実行
+java -cp target/grpctest-1.0-SNAPSHOT-jar-with-dependencies.jar org.jpdna.grpchello.HelloWorldServer
+
+クライアント実行
+java -cp target/grpctest-1.0-SNAPSHOT-jar-with-dependencies.jar org.jpdna.grpchello.HelloWorldClient
+
+
+:::http://a4dosanddos.hatenablog.com/entry/2015/02/22/163009
+javaプロジェクトの作り方
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false -DartifactId=hello
+mvn archetype:generate -DgroupId=app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false -DartifactId=merukari
+
+エラー出たらとりあえずこれ
+mvn clean
+
+プロジェクトのビルド
+mvn package
+
+java実行
+mvn exec:java
+
+pom.xmlにこいつが必要になる
+<plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>exec-maven-plugin</artifactId>
+      <configuration>
+        <mainClass>com.mycompany.app.App</mainClass>
+      </configuration>
+</plugin>
+
+|_|_|_|_|_|__||__||_|
+
+コンパイルの実行
+mvn compile
+	target/classes　以下にclassファイル出力
+
+テストの実行
+mvn test
+	*/Test.java	**/*Test,java　とかが実行される
+
+
+jarの作成
+mvn package
+
+test
