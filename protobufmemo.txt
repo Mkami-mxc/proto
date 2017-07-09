@@ -3,26 +3,24 @@
 10.2.10.3
 
 protoコンパイル
-C:\Users\達哉\Desktop\test_java\ren>protoc --java_out . api.proto
+C:\Users\name\Desktop\test_java\ren>protoc --java_out . api.proto
 
 goの時
  protoc -I . helloworld.proto --go_out=plugins=grpc:.
 
 
 javac
-javac -classpath C:\Users\達哉\Desktop\protobuf\protobuf-3.3.0\java\core\target\protobuf-java-3.3.0.jar Persons.java
+javac -classpath C:\Users\name\Desktop\protobuf\protobuf-3.3.0\java\core\target\protobuf-java-3.3.0.jar Persons.java
 
 
 
 java
-java -classpath C:\Users\達哉\Desktop\protobuf\protobuf-3.3.0\java\core\target\protobuf-java-3.3.0.jar ReadWritePerson
+java -classpath C:\Users\name\Desktop\protobuf\protobuf-3.3.0\java\core\target\protobuf-java-3.3.0.jar ReadWritePerson
 
 memo
 今更だけど gRPC を試してみた
 http://qiita.com/chyiro/items/41020e0314414c57ec21#fn2
 
-課題
-https://gist.github.com/mrecun/b59e3ddfccb7d4d793153d41a077f630
 
 protocol buffer(マイナビ)
 http://news.mynavi.jp/articles/2008/07/18/protocolbuffer/001.html
